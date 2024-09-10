@@ -1,0 +1,21 @@
+
+  
+  .wordmark {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 800%;
+    letter-spacing: -7px;
+    text-wrap: nowrap;
+
+
+    
+
+    mix-blend-mode:color-burn;
+
+    
+  }
+
+
