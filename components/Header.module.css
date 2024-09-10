@@ -1,21 +1,19 @@
+.wordmark {
+  filter: url(#turbulence-filter);
+  background-color: white;
+  padding: 0 0.5ch;
+  width: fit-content;
+  z-index: 1;
+  font-size: 15vw;
+  text-wrap: nowrap;
+  letter-spacing: -4px;
+  text-wrap: nowrap;
+  color: blue;
+  border: 1px solid blue;
+  margin-bottom: 40%;
+}
 
-  
-  .wordmark {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 800%;
-    letter-spacing: -7px;
-    text-wrap: nowrap;
-
-
-    
-
-    mix-blend-mode:color-burn;
-
-    
-  }
-
-
+.svgFilters {
+  position: absolute;
+  z-index: -1;
+}

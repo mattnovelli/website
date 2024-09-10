@@ -5,8 +5,6 @@ export default function Home() {
   return (
     <div className={styles.parentContainer}>
       <Header />
-      <div className={styles.funkyBackground}></div>
-      <main className={styles.main}></main>
     </div>
   );
 }
