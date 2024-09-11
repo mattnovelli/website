@@ -11,7 +11,7 @@ export default function Content() {
       <main className={styles.main}>
         <div className={styles.contentContainer}>
           <div className={styles.wordmark}>Matt Novelli</div>
-          <div className={styles.content}>editor, programmer, artist</div>
+          <div className={styles.content}>programmer, editor, artist</div>
           {/* <div className={styles.socials}>
             <Link href="https://www.instagram.com/matthewnovelli/">
               <FaInstagram />

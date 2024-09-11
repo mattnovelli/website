@@ -5,7 +5,7 @@
   padding: 2rem;
   position: absolute;
   aspect-ratio: 1;
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: -1;
 
   --bg-color: var(--background);
@@ -14,7 +14,7 @@
 
   --arbitrary-size: calc((100vw / 18) + 0.1vw);
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: var(--bg-color);
   background-image: linear-gradient(var(--line-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--line-color) 1px, transparent 1px),
