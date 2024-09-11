@@ -9,9 +9,9 @@
   overflow: hidden;
   z-index: -1;
 
-  --bg-color: #ffffff;
-  --line-color-1: blue;
-  --line-color-2: blue;
+  --bg-color: var(--background);
+  --line-color-1: var(--foreground);
+  --line-color-2: var(--foreground);
 
   width: 100%;
   height: 100%;
@@ -21,5 +21,5 @@
     linear-gradient(var(--line-color-2) 1px, transparent 1px),
     linear-gradient(90deg, var(--line-color-2) 1px, transparent 1px);
   background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-size: 100px 100px, 100px 100px;
 }

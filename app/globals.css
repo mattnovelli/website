@@ -1,18 +1,14 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: blue;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: white;
   }
 }
-
-
-
-
 
 html,
 body {
@@ -23,15 +19,9 @@ body {
 body {
   color: var(--foreground);
 
-
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
-
-
-
 
 * {
   box-sizing: border-box;
