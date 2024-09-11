@@ -1,0 +1,179 @@
+.content,
+.wordmark {
+  width: 100%;
+  z-index: 1;
+}
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+  background-color: var(--background);
+  /* padding: 1rem; */
+  /* alight left */
+  margin-top: 1.5rem;
+  margin-right: auto;
+}
+
+.content {
+  font-family: serif;
+  font-size: 120%;
+}
+
+.wordmark {
+  letter-spacing: -0.09rem;
+  font-size: 300%;
+}
+
+.wordmark::after {
+  content: " _";
+  /* color: ; */
+  /* hard blink */
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--foreground);
+  font-size: 120%;
+}
+
+.button {
+  font-family: serif;
+  /* font-size: 120%; */
+  gap: 1.5rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.button:not(:last-child) {
+  border-bottom: 1px solid var(--line-color);
+}
+
+.contentContainer,
+.button {
+  line-height: 1.2;
+  background-color: var(--background);
+  display: flex;
+
+  margin: auto;
+  padding: 1.5rem;
+
+  width: 100%;
+}
+
+/* .main > * {
+  box-shadow: 0 0 5px 5px var(--background);
+} */
+
+.contentContainer {
+  background-color: var(--foreground);
+  color: var(--background);
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--foreground);
+}
+
+.icon {
+  font-size: 150%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* media selector for mobile */
+@media (max-width: 600px) {
+  .main {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  .main {
+    width: 50ch;
+  }
+}
+
+.main {
+  /* width: 50ch; */
+
+  /* min-width: 70ch; */
+  /* width: 100%; */
+
+  /* padding: 0 1vh; */
+
+  /* margin: auto; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.year {
+  text-align: center;
+  font-family: serif;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin-top: auto;
+  margin-bottom: 0;
+  background-color: var(--background);
+  padding: 0.5rem 1rem;
+}
+
+/* want to just change shadow color */
+@keyframes colorwheel {
+  0% {
+    box-shadow: -10px -10px red;
+  }
+  25% {
+    box-shadow: -10px -10px blue;
+  }
+  50% {
+    box-shadow: -10px -10px green;
+  }
+  75% {
+    box-shadow: -10px -10px yellow;
+  }
+  100% {
+    box-shadow: -10px -10px red;
+  }
+}
+
+.svgFilters {
+  position: absolute;
+  z-index: -1;
+}
