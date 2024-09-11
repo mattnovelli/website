@@ -3,13 +3,13 @@ import styles from "./Content.module.css";
 import { GiLightBulb } from "react-icons/gi";
 import { BsPersonArmsUp } from "react-icons/bs";
 import { SiMinutemailer } from "react-icons/si";
+import Footer from "./Footer";
 
 export default function Content() {
-  const year = new Date().getFullYear();
   return (
     <>
       <main className={styles.main}>
-        <div className={styles.contentContainer}>
+        <div className={styles.header}>
           <div className={styles.wordmark}>Matt Novelli</div>
           <div className={styles.content}>programmer, editor, artist</div>
           {/* <div className={styles.socials}>
@@ -43,34 +43,7 @@ export default function Content() {
           </Link>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <div className={styles.year}> © {integerToRoman(year)} → ∞</div>
-      </footer>
+      <Footer />
     </>
   );
-}
-function integerToRoman(num: number) {
-  const romanValues: { [key: string]: number } = {
-    M: 1000,
-    CM: 900,
-    D: 500,
-    CD: 400,
-    C: 100,
-    XC: 90,
-    L: 50,
-    XL: 40,
-    X: 10,
-    IX: 9,
-    V: 5,
-    IV: 4,
-    I: 1,
-  };
-  let roman = "";
-  for (const key in romanValues) {
-    while (num >= romanValues[key]) {
-      roman += key;
-      num -= romanValues[key];
-    }
-  }
-  return roman;
 }

@@ -71,7 +71,7 @@
   border-bottom: 1px solid var(--line-color);
 }
 
-.contentContainer,
+.header,
 .button {
   line-height: 1.2;
   background-color: var(--background);
@@ -87,7 +87,7 @@
   box-shadow: 0 0 5px 5px var(--background);
 } */
 
-.contentContainer {
+.header {
   background-color: var(--foreground);
   color: var(--background);
 
@@ -102,56 +102,38 @@
   font-size: 150%;
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
 /* media selector for mobile */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .main {
     width: 100%;
+    padding-right: 4vw;
+    padding-left: 4vw;
+    margin-top: 15vh;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 1000px) {
   .main {
-    width: 50ch;
+    max-width: calc(var(--cell-size) * 25);
+    min-width: 28vw;
+    /* max-width: clamp(25ch, 50vw, 50ch); */
+
+    margin-top: calc(var(--cell-size) * 5);
+    /* height: calc(var(--cell-size) * 25); */
+    /* min-height: 24vw; */
   }
 }
 
 .main {
-  /* width: 50ch; */
+  /* outline: 2vw solid var(--background); */
 
-  /* min-width: 70ch; */
-  /* width: 100%; */
-
-  /* padding: 0 1vh; */
-
-  /* margin: auto; */
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.year {
-  text-align: center;
-  font-family: serif;
-  font-weight: 100;
-  letter-spacing: 2px;
-  margin-top: auto;
-  margin-bottom: 0;
-  background-color: var(--background);
-  padding: 0.5rem 1rem;
 }
 
 /* want to just change shadow color */
