@@ -5,6 +5,7 @@ export default function Header() {
     <>
       <svg className={styles.svgFilters}>
         <defs>
+          {/*turbulence  */}
           <filter id="turbulence-filter">
             <feTurbulence
               id="turbulence-filter__turbulence"
@@ -36,7 +37,7 @@ export default function Header() {
           </filter>
         </defs>
       </svg>
-      <div className={styles.wordmark}>matt novelli</div>
+      <div className={styles.wordmark}>matthew novelli</div>
     </>
   );
 }

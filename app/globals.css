@@ -1,12 +1,19 @@
 :root {
   --background: #ffffff;
   --foreground: blue;
+  --line-color: rgb(0, 0, 255);
+}
+
+::selection {
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
     --foreground: white;
+    --line-color: #ffffff;
   }
 }
 

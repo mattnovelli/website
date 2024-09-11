@@ -1,25 +1,50 @@
 .parentContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 2rem;
   position: absolute;
   aspect-ratio: 1;
   overflow: hidden;
   z-index: -1;
 
   --bg-color: var(--background);
-  --line-color-1: var(--foreground);
-  --line-color-2: var(--foreground);
+  will-change: background-position;
+  box-shadow: inset 0 0 5vw 5vw var(--background);
 
-  width: 100%;
-  height: 100%;
+  --arbitrary-size: calc((100vw / 18) + 0.1vw);
+  width: 100vw;
+  height: 100vh;
   background-color: var(--bg-color);
-  background-image: linear-gradient(var(--line-color-1) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-color-1) 1px, transparent 1px),
-    linear-gradient(var(--line-color-2) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-color-2) 1px, transparent 1px);
+  background-image: linear-gradient(var(--line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-color) 1px, transparent 1px),
+    linear-gradient(var(--line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-color) 1px, transparent 1px);
+
+  /* background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px; */
+  /* background-position: 0 0, 0 0, 0 0, 0 0; */
   background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
-  background-size: 100px 100px, 100px 100px;
+
+  /* background-repeat: no-repeat; */
+
+  /* animation: grid 8s linear infinite; */
+  background-size: calc(var(--arbitrary-size) * 2)
+      calc(var(--arbitrary-size) * 2),
+    calc(var(--arbitrary-size) * 2) calc(var(--arbitrary-size) * 2),
+    calc(var(--arbitrary-size) * 2) calc(var(--arbitrary-size) * 2),
+    calc(var(--arbitrary-size) * 2) calc(var(--arbitrary-size) * 2);
+}
+
+@keyframes grid {
+  100% {
+    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  }
+  0% {
+    background-position: calc(var(--arbitrary-size) * 2)
+        calc(var(--arbitrary-size) * 2),
+      calc(var(--arbitrary-size) * 2) calc(var(--arbitrary-size) * 2),
+      calc(var(--arbitrary-size) * 2) calc(var(--arbitrary-size) * 2),
+      calc(var(--arbitrary-size) * 2) calc(var(--arbitrary-size) * 2);
+  }
 }
