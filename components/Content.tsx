@@ -3,10 +3,6 @@ import styles from "./Content.module.css";
 import { GiLightBulb } from "react-icons/gi";
 import { BsPersonArmsUp } from "react-icons/bs";
 import { SiMinutemailer } from "react-icons/si";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaSquareGithub } from "react-icons/fa6";
-import { BiLogoRedbubble } from "react-icons/bi";
 
 export default function Content() {
   const year = new Date().getFullYear();
