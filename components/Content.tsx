@@ -66,7 +66,7 @@ function integerToRoman(num: number) {
     I: 1,
   };
   let roman = "";
-  for (let key in romanValues) {
+  for (const key in romanValues) {
     while (num >= romanValues[key]) {
       roman += key;
       num -= romanValues[key];
