@@ -109,6 +109,7 @@ function Microwave() {
         <div className={styles.door}>
           <div className={windowStyles}>
             <audio
+              preload="auto"
               src="/hum.mp3"
               loop={true}
               autoPlay={false}
@@ -116,6 +117,7 @@ function Microwave() {
               controls={false}
             />
             <audio
+              preload="auto"
               src="/done.mp3"
               loop={false}
               autoPlay={false}
