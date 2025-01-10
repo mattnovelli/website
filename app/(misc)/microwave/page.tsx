@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { Dynalight, Karla, Rakkas } from "next/font/google";
 import clsx from "clsx";
 import { useEffect, useRef } from "react";
-import { RecoilRoot, useRecoilState } from "recoil";
+import { RecoilRoot, useRecoilState, useSetRecoilState } from "recoil";
 import { cookingState, microwaveDisplayState } from "@/state/microwaveState";
 
 const segment = localFont({
@@ -175,7 +175,7 @@ interface MicrowaveButtonProps {
 }
 function MicrowaveButton({ label, isStart, isStop }: MicrowaveButtonProps) {
   const [displayState, setDisplayState] = useRecoilState(microwaveDisplayState);
-  const [cooking, setCooking] = useRecoilState(cookingState);
+  const setCooking = useSetRecoilState(cookingState);
   const playBeep = () => {
     const beep = new Audio("/beep.mp3");
     beep.play();
@@ -230,7 +230,7 @@ interface MicrowaveDisplayProps {
 
 function MicrowaveDisplay({ number }: MicrowaveDisplayProps) {
   //pad left with zeros and insert colon
-  var text = number.toString();
+  let text = number.toString();
   text = text.padStart(4, "0");
   text = text.slice(0, 2) + ":" + text.slice(2);
 
