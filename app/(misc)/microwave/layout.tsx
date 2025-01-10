@@ -11,7 +11,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const response = await fetch("https://www.mattnovelli.com/microwave");
+  const response = await fetch("https://www.mattnovelli.com/working.ani");
   const data = new Uint8Array(await response.arrayBuffer());
 
   return (
