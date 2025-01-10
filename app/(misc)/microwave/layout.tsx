@@ -1,4 +1,4 @@
-import CustomCursor from "./CustomCursor";
+// import CustomCursor from "./CustomCursor";
 import "./globals.css";
 export const metadata = {
   title: "feed heater",
@@ -16,7 +16,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>{children}</body>
-      <CustomCursor data={data} />
+      {/* <CustomCursor data={data} /> */}
     </html>
   );
 }
