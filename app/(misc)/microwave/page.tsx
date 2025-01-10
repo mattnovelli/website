@@ -149,7 +149,7 @@ function Microwave() {
   );
 }
 
-export function MicrowaveButtons() {
+function MicrowaveButtons() {
   return (
     <div className={styles.buttons}>
       <MicrowaveButton label="1" />
