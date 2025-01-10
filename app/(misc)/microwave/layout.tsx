@@ -10,8 +10,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const response = await fetch("http://localhost:3000/working.ani");
-  const data = new Uint8Array(await response.arrayBuffer());
+  // const response = await fetch("http://localhost:3000/working.ani");
+  // const data = new Uint8Array(await response.arrayBuffer());
 
   return (
     <html lang="en">
