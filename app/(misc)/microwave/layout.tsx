@@ -1,7 +1,5 @@
-import { convertAniBinaryToCSS } from "ani-cursor";
 import CustomCursor from "./CustomCursor";
 import "./globals.css";
-import { RecoilRoot } from "recoil";
 export const metadata = {
   title: "feed heater",
 };

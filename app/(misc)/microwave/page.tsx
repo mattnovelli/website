@@ -1,22 +1,10 @@
 "use client";
 import localFont from "next/font/local";
 import styles from "./page.module.css";
-import {
-  Barlow_Condensed,
-  Dynalight,
-  Karla,
-  Pinyon_Script,
-  Rakkas,
-} from "next/font/google";
+import { Dynalight, Karla, Rakkas } from "next/font/google";
 import clsx from "clsx";
-import { convertAniBinaryToCSS } from "ani-cursor";
-import { useEffect, useRef, useState } from "react";
-import {
-  RecoilRoot,
-  useRecoilSnapshot,
-  useRecoilState,
-  useRecoilValue,
-} from "recoil";
+import { useEffect, useRef } from "react";
+import { RecoilRoot, useRecoilState } from "recoil";
 import { cookingState, microwaveDisplayState } from "@/state/microwaveState";
 
 const segment = localFont({
