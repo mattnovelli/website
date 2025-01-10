@@ -4,15 +4,24 @@ import { GiLightBulb } from "react-icons/gi";
 import { BsPersonArmsUp } from "react-icons/bs";
 import { SiMinutemailer } from "react-icons/si";
 import Footer from "./Footer";
+import localFont from "next/font/local";
+
+const Bagnard = localFont({
+  src: "../app/fonts/PicNic.woff2",
+  variable: "--font-bagnard",
+});
 
 export default function Content() {
   return (
     <>
-      <main className={styles.main}>
-        <div className={styles.header}>
-          <div className={styles.wordmark}>Matt Novelli</div>
-          <div className={styles.content}>programmer, editor, artist</div>
-          {/* <div className={styles.socials}>
+      <div className={styles.header}>
+        <div className={styles.wordmarkBorder}>
+          <div className={`${styles.wordmark} ${Bagnard.className}`}>
+            <b> matt novelli</b>
+          </div>
+        </div>
+        {/* <div className={styles.content}>programmer, editor, artist</div> */}
+        {/* <div className={styles.socials}>
             <Link href="https://www.instagram.com/matthewnovelli/">
               <FaInstagram />
             </Link>
@@ -26,23 +35,28 @@ export default function Content() {
               <BiLogoRedbubble />
             </Link>
           </div> */}
-        </div>
+      </div>
+      <span className={styles.accent}>↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯</span>
+      <main className={styles.main}>
         <div className={styles.links}>
           <Link className={styles.button} href="/bio">
             <BsPersonArmsUp className={styles.icon} />
-            <span>bio</span>
+            <span>about</span>
           </Link>
           <Link className={styles.button} href="/projects">
             <GiLightBulb className={styles.icon} />
-            <span>projects</span>
+            <span>works</span>
           </Link>
 
           <Link className={styles.button} href="/contact">
             <SiMinutemailer className={styles.icon} />
-            <span>contact</span>
+            <span>mails</span>
           </Link>
         </div>
       </main>
+      <span className={styles.accentBottom}>
+        ↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯↯
+      </span>
       <Footer />
     </>
   );

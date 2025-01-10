@@ -3,6 +3,52 @@
   width: 100%;
   z-index: 1;
 }
+
+.wordmark {
+  mix-blend-mode: hard-light;
+  background-color: red;
+  text-shadow: 3px 3px 0px rebeccapurple;
+}
+
+.wordmarkBorder {
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.096);
+
+  background-image: linear-gradient(
+    var(--angle),
+    rgb(0, 0, 255) 0%,
+    rgb(255, 0, 0) 10%,
+    rgb(250, 65, 250) 20%,
+    rgb(0, 207, 197) 30%,
+    rgb(94, 0, 117) 40%,
+    rgb(189, 127, 12) 50%,
+    rgb(0, 0, 255) 60%,
+    rgb(0, 255, 255) 70%,
+    rgb(94, 0, 117) 80%,
+    rgb(238, 157, 6) 90%,
+    rgb(0, 0, 255) 100%
+  );
+  border-radius: 20px;
+  padding: 10px;
+  /* padding: 1rem; */
+  animation: rotate 120s linear infinite;
+  background-size: 200% 500%;
+}
+
+@keyframes rotate {
+  from {
+    --angle: 30deg;
+  }
+  to {
+    --angle: 390deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .socials {
   display: flex;
   flex-direction: row;
@@ -17,79 +63,113 @@
 }
 
 .content {
-  font-family: serif;
+  /* font-family: serif; */
   font-size: 120%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .wordmark {
+  background-color: var(--foreground);
+  /* border: 4px solid rgba(156, 0, 204, 0.144); */
+  padding: 0 96px;
+  border-radius: 25px;
+
   letter-spacing: -0.09rem;
   font-size: 300%;
-}
-
-.wordmark::after {
-  content: " _";
-  /* color: ; */
-  /* hard blink */
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
 .links {
   width: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--foreground);
-  font-size: 120%;
+  gap: 1em;
+  /* margin-top: 2em; */
+
+  /* margin-bottom: 2em; */
+
+  /* border: 1px solid var(--foreground); */
+  /* font-size: 120%; */
 }
 
 .button {
-  font-family: serif;
+  font-family: monospace;
   /* font-size: 120%; */
-  gap: 1.5rem;
-
+  /* background-color: var(--background); */
   display: flex;
   align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255, 255, 255);
+  color: wheat;
+  background-color: black;
+  gap: 0.5rem;
+
+  padding: 0.3em 4rem;
+  /* width: 30%; */
+  margin: auto;
+
+  /* background-image: linear-gradient(
+    45deg,
+    var(--background) 95%,
+    var(--foreground) 95%
+  ); */
 }
 
 .button:hover {
-  background-color: var(--foreground);
-  color: var(--background);
+  box-shadow: 1px 1px 0 0 var(--foreground);
+  animation: extrude 0.1s linear;
+  transform: translate(-1px, -1px);
+  animation: colorwheel 5s ease-in-out infinite;
+  color: rgb(180, 0, 0);
+}
+
+@keyframes extrude {
+  0% {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 0 var(--foreground);
+  }
+  100% {
+    transform: translate(-1px, -1px);
+    box-shadow: 1px 1px 0 0 var(--foreground);
+  }
+}
+
+.button:active {
+  transform: translate(1px, 1px);
+  box-shadow: -1px -1px 0 0 var(--foreground);
 }
 
 .button:not(:last-child) {
-  border-bottom: 1px solid var(--line-color);
+  /* border-bottom: 1px dashed var(--muted-foreground); */
 }
 
 .header,
 .button {
-  line-height: 1.2;
-  background-color: var(--background);
+  /* background-color: var(--background); */
   display: flex;
+  /* margin: auto; */
 
-  margin: auto;
-  padding: 1.5rem;
-
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* .main > * {
   box-shadow: 0 0 5px 5px var(--background);
 } */
 
+.button:last-child {
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.links {
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  padding: 1em 0 1em 0;
+}
+
 .header {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   background-color: var(--foreground);
-  color: var(--background);
+  color: rgb(255, 194, 149);
+  padding: 3rem;
 
   flex-direction: column;
 
@@ -98,35 +178,57 @@
   border: 1px solid var(--foreground);
 }
 
-.icon {
+.accent {
+  color: wheat;
+  z-index: 99;
+  display: inline-block;
+  /* dont take up and vertical space */
+  height: 0;
+  transform: translateY(-35px);
+  font-weight: bold;
   font-size: 150%;
+  mix-blend-mode: difference;
+  text-align: center;
+
+  /* overflow: hidden; */
+}
+
+.accentBottom {
+  display: inline-block;
+  height: 0;
+  text-align: center;
+  transform: scale(1, -1) translateY(-32px);
+
+  font-weight: bold;
+  font-size: 150%;
+  mix-blend-mode: difference;
+
+  /* transform:  */
+  color: wheat;
 }
 
 /* media selector for mobile */
 @media (max-width: 1000px) {
   .main {
-    width: 100%;
+    /* width: 100%;
     padding-right: 4vw;
     padding-left: 4vw;
-    margin-top: 15vh;
+    margin-top: 15vh; */
   }
 }
 
 @media (min-width: 1000px) {
   .main {
-    max-width: calc(var(--cell-size) * 25);
+    /* max-width: calc(var(--cell-size) * 25);
     min-width: 28vw;
-    /* max-width: clamp(25ch, 50vw, 50ch); */
-
     margin-top: calc(var(--cell-size) * 5);
-    /* height: calc(var(--cell-size) * 25); */
-    /* min-height: 24vw; */
+    min-height: 24vw; */
   }
 }
 
 .main {
   /* outline: 2vw solid var(--background); */
-
+  /* box-shadow: 5px 5px 20px 20px var(--background);
   margin-left: auto;
   margin-right: auto;
 
@@ -134,25 +236,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* want to just change shadow color */
-@keyframes colorwheel {
-  0% {
-    box-shadow: -10px -10px red;
-  }
-  25% {
-    box-shadow: -10px -10px blue;
-  }
-  50% {
-    box-shadow: -10px -10px green;
-  }
-  75% {
-    box-shadow: -10px -10px yellow;
-  }
-  100% {
-    box-shadow: -10px -10px red;
-  }
+  box-shadow: 0 0 5px 5px var(--muted-foreground);
+  border-radius: var(--border-radius); */
+  text-align: center;
+  padding: 3em;
+  /* max-width: 80ch; */
+  /* margin: auto; */
 }
 
 .svgFilters {

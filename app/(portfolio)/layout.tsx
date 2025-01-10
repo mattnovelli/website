@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const Gloock = localFont({
-  src: "./fonts/Gloock.woff2",
-  variable: "--font-geist-sans",
-});
 
 export const metadata: Metadata = {
   title: "matt novelli",
@@ -19,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${Gloock.className}`}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
