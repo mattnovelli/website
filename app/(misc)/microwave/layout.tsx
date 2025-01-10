@@ -2,6 +2,7 @@ import CustomCursor from "./CustomCursor";
 import "./globals.css";
 export const metadata = {
   title: "feed heater",
+  description: "heat your feed",
 };
 
 export default async function RootLayout({
