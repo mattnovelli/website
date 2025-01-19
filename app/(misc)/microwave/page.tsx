@@ -103,6 +103,19 @@ function Microwave() {
     }
   }, [cooking]);
 
+  const supportsHEVCAlpha = () => {
+    const navigator = window.navigator;
+    const ua = navigator.userAgent.toLocaleLowerCase();
+    const hasMediaCapabilities = !!(
+      navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo
+    );
+    const isSafari =
+      ua.indexOf("safari") != -1 &&
+      !(ua.indexOf("chrome") != -1) &&
+      ua.indexOf("version/") != -1;
+    return isSafari && hasMediaCapabilities;
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.microwaveBody}>
@@ -126,7 +139,7 @@ function Microwave() {
             />
             <video
               preload="auto"
-              src="/fries.webm"
+              src={supportsHEVCAlpha() ? "/fries.mov" : "/fries.webm"}
               playsInline={true}
               controls={false}
               autoPlay={false}
