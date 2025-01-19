@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import styles from "./page.module.css";
 import { Dynalight, Karla, Rakkas } from "next/font/google";
 import clsx from "clsx";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RecoilRoot, useRecoilState, useSetRecoilState } from "recoil";
 import { cookingState, microwaveDisplayState } from "@/state/microwaveState";
 
@@ -103,10 +103,12 @@ function Microwave() {
     }
   }, [cooking]);
 
-  const supportsHEVCAlpha = () => {
-    if (typeof window == "undefined") {
-      return false;
-    }
+  const [hasMediaCapabilities, setHasMediaCapabilities] = useState(false);
+
+  useEffect(() => {
+    // if (typeof window == "undefined") {
+    //   return false;
+    // }
 
     const navigator = window.navigator;
     const ua = navigator.userAgent.toLocaleLowerCase();
@@ -117,8 +119,10 @@ function Microwave() {
       ua.indexOf("safari") != -1 &&
       !(ua.indexOf("chrome") != -1) &&
       ua.indexOf("version/") != -1;
-    return isSafari && hasMediaCapabilities;
-  };
+    console.log(isSafari && hasMediaCapabilities);
+    setHasMediaCapabilities(isSafari && hasMediaCapabilities);
+    // [], []);
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -143,7 +147,7 @@ function Microwave() {
             />
             <video
               preload="auto"
-              src={supportsHEVCAlpha() ? "/fries.mov" : "/fries.webm"}
+              src={hasMediaCapabilities ? "/fries.mov" : "/fries.webm"}
               playsInline={true}
               controls={false}
               autoPlay={false}
