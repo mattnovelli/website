@@ -104,6 +104,7 @@ function Microwave() {
   }, [cooking]);
 
   const supportsHEVCAlpha = () => {
+    if (!window) return false;
     const navigator = window.navigator;
     const ua = navigator.userAgent.toLocaleLowerCase();
     const hasMediaCapabilities = !!(
