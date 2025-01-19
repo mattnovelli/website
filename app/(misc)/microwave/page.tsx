@@ -127,6 +127,7 @@ function Microwave() {
             <video
               preload="auto"
               src="/fries.webm"
+              playsInline={true}
               controls={false}
               autoPlay={false}
               loop={true}
