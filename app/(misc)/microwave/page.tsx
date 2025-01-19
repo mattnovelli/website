@@ -147,7 +147,7 @@ function Microwave() {
             />
             <video
               preload="auto"
-              src={hasMediaCapabilities ? "/fries.mov" : "/fries.webm"}
+              src={hasMediaCapabilities ? "/fries.mov#t=0.1" : "/fries.webm"}
               playsInline={true}
               controls={false}
               autoPlay={false}
